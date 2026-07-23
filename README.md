@@ -2,6 +2,20 @@
 
 # nugetkeep-releases
 
+<!-- portfolio-badges:start -->
+<!-- Identity -->
+[![Atypical-Consulting - nugetkeep-releases](https://img.shields.io/static/v1?label=Atypical-Consulting&message=nugetkeep-releases&color=blue&logo=github)](https://github.com/Atypical-Consulting/nugetkeep-releases)
+![Top language](https://img.shields.io/github/languages/top/Atypical-Consulting/nugetkeep-releases)
+[![Stars](https://img.shields.io/github/stars/Atypical-Consulting/nugetkeep-releases?style=social)](https://github.com/Atypical-Consulting/nugetkeep-releases/stargazers)
+[![Forks](https://img.shields.io/github/forks/Atypical-Consulting/nugetkeep-releases?style=social)](https://github.com/Atypical-Consulting/nugetkeep-releases/network/members)
+
+<!-- Activity -->
+[![Issues](https://img.shields.io/github/issues/Atypical-Consulting/nugetkeep-releases)](https://github.com/Atypical-Consulting/nugetkeep-releases/issues)
+[![Pull requests](https://img.shields.io/github/issues-pr/Atypical-Consulting/nugetkeep-releases)](https://github.com/Atypical-Consulting/nugetkeep-releases/pulls)
+[![Last commit](https://img.shields.io/github/last-commit/Atypical-Consulting/nugetkeep-releases)](https://github.com/Atypical-Consulting/nugetkeep-releases/commits)
+<!-- portfolio-badges:end -->
+
+
 Public distribution repo for the [NuGetKeep](https://nugetkeep.com) installer —
 these binaries back `curl -fsSL https://nugetkeep.com/install | bash`.
 
