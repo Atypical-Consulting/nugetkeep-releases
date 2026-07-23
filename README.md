@@ -15,6 +15,18 @@
 [![Last commit](https://img.shields.io/github/last-commit/Atypical-Consulting/nugetkeep-releases)](https://github.com/Atypical-Consulting/nugetkeep-releases/commits)
 <!-- portfolio-badges:end -->
 
+<!-- portfolio-toc:start -->
+
+## Table of Contents
+
+- [Features](#features)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
+<!-- portfolio-toc:end -->
+
+
 
 Public distribution repo for the [NuGetKeep](https://nugetkeep.com) installer —
 these binaries back `curl -fsSL https://nugetkeep.com/install | bash`.
