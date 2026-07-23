@@ -22,6 +22,32 @@ these binaries back `curl -fsSL https://nugetkeep.com/install | bash`.
 Releases are published automatically by the (private) product repo's
 `installer-release.yml`. No source code lives here.
 
+## Features
+
+This repo only holds release artifacts, but the install flow it serves does real work:
+
+- **Prebuilt binaries per release** — self-contained `nugetkeep-install` builds for Linux (x64/arm64) and macOS (x64/arm64), attached to each GitHub Release.
+- **Checksum-verified installs** — every download is checked against a published `checksums.txt` (SHA-256) by the install shim before it runs.
+- **Version pinning** — a specific release can be pinned instead of always installing latest.
+- **Platform fallbacks documented** — Windows via WSL2, Alpine/musl via the Docker image, since there's no native binary for either.
+- **Fully automated publishing** — releases are cut by the private product repo's CI; nothing here is hand-pushed.
+
+## Usage
+
+Install the latest version:
+
+```bash
+curl -fsSL https://nugetkeep.com/install | bash
+```
+
+Pin a specific version:
+
+```bash
+curl -fsSL https://nugetkeep.com/install | NUGETKEEP_INSTALL_VERSION=0.5.0 bash
+```
+
+On Windows, run the installer under WSL2; on Alpine/musl, use the Docker image instead — the shim doesn't ship a musl binary.
+
 ---
 
 <!-- portfolio-sections:start -->
