@@ -19,34 +19,22 @@
 
 ## Table of Contents
 
-- [Features](#features)
-- [Usage](#usage)
+- [Install](#install)
+- [Docker image](#docker-image)
+- [Editions and pricing](#editions-and-pricing)
+- [Links](#links)
+- [About this repository](#about-this-repository)
 - [Contributing](#contributing)
 - [License](#license)
 
 <!-- portfolio-toc:end -->
 
+NuGetKeep is a self-hosted NuGet v3 server that gates every uploaded package through a
+supply-chain quarantine (OSV vulnerability scan), with OIDC/SSO + RBAC, keyless trusted
+publishing, multiple isolated feeds, a symbol server, and read-only MCP tools — shipped as a
+single Docker image that runs anywhere, including air-gapped.
 
-
-Public distribution repo for the [NuGetKeep](https://nugetkeep.com) installer —
-these binaries back `curl -fsSL https://nugetkeep.com/install | bash`.
-
-Releases are published automatically by the (private) product repo's
-`installer-release.yml`. No source code lives here.
-
-## Features
-
-This repo only holds release artifacts, but the install flow it serves does real work:
-
-- **Prebuilt binaries per release** — self-contained `nugetkeep-install` builds for Linux (x64/arm64) and macOS (x64/arm64), attached to each GitHub Release.
-- **Checksum-verified installs** — every download is checked against a published `checksums.txt` (SHA-256) by the install shim before it runs.
-- **Version pinning** — a specific release can be pinned instead of always installing latest.
-- **Platform fallbacks documented** — Windows via WSL2, Alpine/musl via the Docker image, since there's no native binary for either.
-- **Fully automated publishing** — releases are cut by the private product repo's CI; nothing here is hand-pushed.
-
-## Usage
-
-Install the latest version:
+## Install
 
 ```bash
 curl -fsSL https://nugetkeep.com/install | bash
@@ -58,9 +46,40 @@ Pin a specific version:
 curl -fsSL https://nugetkeep.com/install | NUGETKEEP_INSTALL_VERSION=0.5.0 bash
 ```
 
-On Windows, run the installer under WSL2; on Alpine/musl, use the Docker image instead — the shim doesn't ship a musl binary.
+Every download is checked against a published `checksums.txt` (SHA-256) by the install shim
+before it runs. There's no native Windows binary — the installer's bootstrap tells Windows users
+to run it under WSL2; on Alpine/musl, use the Docker image below instead.
 
----
+## Docker image
+
+```bash
+docker pull ghcr.io/atypical-consulting/nugetkeep
+```
+
+Public on the GitHub Container Registry — no login required to pull it.
+
+## Editions and pricing
+
+| Edition | Price |
+| --- | --- |
+| Community | Free |
+| Team | 1 090 € HT/an |
+| Enterprise | 2 990 € HT/an |
+
+Full feature breakdown: [nugetkeep.com/pricing](https://nugetkeep.com/pricing/).
+
+## Links
+
+- Website: <https://nugetkeep.com>
+- Docs: <https://nugetkeep.com/docs/>
+- Pricing: <https://nugetkeep.com/pricing/>
+
+## About this repository
+
+Releases are published automatically by the (private) product repo's `installer-release.yml`.
+No source code lives here — this repo only holds release artifacts: prebuilt `nugetkeep-install`
+binaries for Linux (x64/arm64) and macOS (x64/arm64), attached to each GitHub Release alongside
+their checksums.
 
 <!-- portfolio-sections:start -->
 
